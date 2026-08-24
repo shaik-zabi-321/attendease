@@ -106,6 +106,7 @@ def take_attendence():
     subjects = get_teacher_subjects(teacher_id)
     if not subjects:
         st.warning("Please create a subject ")
+        return
     subject_options = {
         f"{s['name']}-{s['subject_code']}": s['subject_id'] for s in subjects}
     col1, col2 = st.columns(2)
