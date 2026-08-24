@@ -5,7 +5,7 @@ import io
 
 @st.dialog("Share code")
 def share_subject_dialog(subject_name, subject_code):
-    appdomain = "Beep-main.streamlit.app"
+    appdomain = "https://shaik-zabi-321-snap-class-app-mvgk3n.streamlit.app"
     joinurl = f"{appdomain}/?join_code={subject_code}"
     st.header("Scan to Join")
 
