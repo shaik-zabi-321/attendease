@@ -153,6 +153,7 @@ def take_attendence():
 
                 if not enrolled_students:
                     st.warning("No Students Enrolled In This Course")
+                    return
                 else:
                     results, attendence_to_log = [], []
                     current_time_stamp = datetime.now().strftime("%Y-%m-%dT%H:%M:%S")
