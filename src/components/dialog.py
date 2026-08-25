@@ -20,8 +20,9 @@ def create_subject_dialog(teacher_id):
                 st.toast("subject sucessfully created")
                 st.rerun()
             except Exception as e:
-                st.error(f"ERROR: {str(e)}")
-                st.write("Debug info:", repr(e))
-                st.write("Type:", type(e).__name__)
-        else:
-            st.info("please fill all cases")
+                if getattr(e, "code", None) == "23505":
+                    st.error(
+                        "Subject ID already exists. Please choose a different ID.")
+                else:
+                    st.error(
+                        "Something went wrong while creating the subject. Please try again.")
