@@ -84,6 +84,21 @@ def style_base_layout():
                 font-weight: 700 !important;
                 transition: transform 0.15s ease-in-out !important;
                 }}
+            [data-testid="stCameraInputButton"] {{
+                border-radius: 1.2rem !important;
+                background-color: {BEEP_GREEN} !important;
+                color: {CREAM} !important;
+                border: none !important;
+                border-bottom: 4px solid {DEEP_FOREST} !important;
+                font-weight: 700 !important;
+                padding: 10px 20px !important;
+            }}
+                
+            [data-testid="stCameraInputButton"]:disabled {{
+                : 0.5 !important;
+                cursor: not-allowed !important;
+            }}
+        
 
             /* secondary = alternate action, e.g. "Use voice instead" */
             button[kind="secondary"] {{
@@ -98,7 +113,7 @@ def style_base_layout():
                 }}
 
             /* tertiary = low emphasis, e.g. "Clear", "Logout" */
-            button[kind="tertiary"] {{
+            opacitybutton[kind="tertiary"] {{
                 border-radius: 1.2rem !important;
                 background-color: transparent !important;
                 color: {DEEP_FOREST} !important;
