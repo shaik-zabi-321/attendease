@@ -5,7 +5,6 @@ from src.pipelines.facepipeline import get_face_embeddings, train_classifier
 from src.pipelines.voice_pipeline import get_voice_embedding
 from src.database.db import create_students
 import time
-from src.
 
 
 @st.dialog("Register New Profile")
