@@ -18,6 +18,7 @@ def voice_attendence_dialog(selected_subject_id):
                 "*,students(*)").eq('subject_id', selected_subject_id).execute()
             enrolled_students = enrolled_res.data
             if not enrolled_students:
+                st.warning("No students are enrolled in this subject yet.")
                 return
             candidate_dict = {
                 s['students']['student_id']: s['students']['voice_embedding']
