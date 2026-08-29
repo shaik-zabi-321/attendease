@@ -1,7 +1,6 @@
 import dlib
 import numpy as np
 import face_recognition_models
-from sklearn.svm import SVC
 import streamlit as st
 from src.database.db import get_all_students
 
@@ -12,7 +11,7 @@ def load_dlib_models():
     sp = dlib.shape_predictor(
         face_recognition_models.pose_predictor_model_location()
     )
-    facerec = dlib.facerec = dlib.face_recognition_model_v1(
+    facerec = dlib.face_recognition_model_v1(
         face_recognition_models.face_recognition_model_location()
     )
     return detector, sp, facerec
@@ -45,12 +44,7 @@ def get_trained_model():
             y.append(student.get('student_id'))
     if len(x) == 0:
         return 0
-    clf = SVC(kernel='linear', probability=True, class_weight='balanced')
-    try:
-        clf.fit(x, y)
-    except ValueError:
-        pass
-    return {'clf': clf, 'x': x, 'y': y}
+    return {'x': x, 'y': y}
 
 
 def train_classifier():
@@ -65,23 +59,22 @@ def predict_attendance(class_image_np):
     model_data = get_trained_model()
     if not model_data:
         return detected_students, [], len(encodings)
-    clf = model_data['clf']
+
     x_train = model_data['x']
     y_train = model_data['y']
 
     all_students = sorted(list(set(y_train)))
+    resemblance_threshold = 0.6
 
     for encoding in encodings:
-        if len(all_students) >= 2:
-            predicted_id = int(clf.predict([encoding])[0])
-        else:
-            predicted_id = int(all_students[0])
-        student_embedding = x_train[y_train.index(predicted_id)]
-
-        best_match_score = np.linalg.norm(student_embedding-encoding)
-
-        resemblance_threshold = 0.6
+        # compare against every registered student's embedding directly,
+        # instead of trusting a forced single-class prediction
+        distances = [np.linalg.norm(np.array(x) - encoding) for x in x_train]
+        best_idx = int(np.argmin(distances))
+        best_match_score = distances[best_idx]
 
         if best_match_score <= resemblance_threshold:
+            predicted_id = int(y_train[best_idx])
             detected_students[predicted_id] = True
+
     return detected_students, all_students, len(encodings)
