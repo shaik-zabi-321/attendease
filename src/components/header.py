@@ -9,7 +9,7 @@ def get_base64_image(path):
     return base64.b64encode(img_bytes).decode()
 
 
-LOGO_PATH = "C:\Users\shaik zabiulla\Desktop\SNAP_CLASS\assets\attendease_logo.svg"
+LOGO_PATH = "assets/attendease_icon.png"
 
 
 def header_home():
@@ -19,7 +19,7 @@ def header_home():
         <div style="display:flex; flex-direction:column; align-items:center; justify-content:center; margin-bottom:20px; margin-top:20px">
             <img src='data:image/png;base64,{logo_b64}' style='height:110px;' />
             <h1 style='text-align:center; color:#2F6B14; margin-top:8px;'>AttendEase</h1>
-            <p style='text-align:center; color:#5F5E5A; margin-top:-6px;'>Smile, say hi, you're marked present</p>
+            <p style='text-align:center; color:#5F5E5A; margin-top:-6px;'>Attendance, without the hassle</p>
         </div>
                 """, unsafe_allow_html=True)
 
