@@ -9,7 +9,7 @@ def get_base64_image(path):
     return base64.b64encode(img_bytes).decode()
 
 
-LOGO_PATH = "C:\Users\shaik zabiulla\Desktop\SNAP_CLASS\assets\attendease_icon.png"
+LOGO_PATH = "C:\Users\shaik zabiulla\Desktop\SNAP_CLASS\assets\attendease_logo.svg"
 
 
 def header_home():

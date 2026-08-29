@@ -1,0 +1,6 @@
+<svg width="680" height="220" viewBox="0 0 680 220" xmlns="http://www.w3.org/2000/svg">
+<rect x="60" y="50" width="130" height="130" rx="32" fill="#58B92E"/>
+<path d="M 100 115 L 120 140 L 155 90" fill="none" stroke="#FFF6EC" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="230" y="125" font-family="'Segoe UI', Arial, sans-serif" font-size="52" font-weight="700" fill="#2F6B14">Attend<tspan fill="#FF9F43">Ease</tspan></text>
+<text x="230" y="155" font-family="'Segoe UI', Arial, sans-serif" font-size="15" font-weight="500" fill="#5F5E5A" letter-spacing="1px">ATTENDANCE, WITHOUT THE HASSLE</text>
+</svg>
