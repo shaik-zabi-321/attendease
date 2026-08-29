@@ -10,7 +10,7 @@ def _render_footer():
         "<div style=\"display:flex; align-items:center; gap:8px;\">"
         f"<img src='data:image/png;base64,{logo_b64}' style='height:26px;' />"
         "<span style=\"font-family:'Baloo 2', sans-serif; font-weight:800; "
-        "color:#2F6B14; font-size:16px;\">Beep</span>"
+        "color:#2F6B14; font-size:16px;\">AttendEase</span>"
         "</div>"
         "<p style=\"font-family:'Outfit', sans-serif; color:#5F5E5A; font-size:12px; margin:0;\">"
         "Face + voice attendance, built for your classroom</p>"
