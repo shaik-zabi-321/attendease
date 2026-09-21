@@ -15,7 +15,7 @@ def _render_footer():
         "<p style=\"font-family:'Outfit', sans-serif; color:#5F5E5A; font-size:12px; margin:0;\">"
         "Face + voice attendance, built for your classroom</p>"
         "<p style=\"font-family:'Outfit', sans-serif; color:#B4B2A9; font-size:11px; margin:4px 0 0;\">"
-        "Made by Your Name Here &nbsp;&middot;&nbsp; Your College Name Here</p>"
+        "Made by shaik zabiulla &nbsp;&middot;&nbsp; Rayalaseema university college of Engineering</p>"
         "</div>"
     )
     st.markdown(html, unsafe_allow_html=True)
